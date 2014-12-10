@@ -16,4 +16,19 @@ ActiveAdmin.register Order do
   # end
 
 
+  form do |f|
+    f.inputs 'Details' do
+      f.input :product
+      f.input :price
+      f.input :buyer
+      f.input :address
+      f.input :amount
+      f.input :phone
+      f.input :status, type: :select, collection: Order::STATUSES
+      f.input :note
+    end
+
+    f.actions
+  end
+
 end
